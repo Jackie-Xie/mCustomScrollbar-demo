@@ -10,6 +10,14 @@ body {
   background: #444;
 }
 
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'helvetica neue',arial,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -20,7 +28,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -35,7 +42,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #333;
 }
 
 .container-narrow > hr {
@@ -45,7 +52,7 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #0f0f0f;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -73,15 +80,22 @@ body {
 }
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     color: #ccc;
-    background-color: #444;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #ccc;
     background-color: #444;
 }
+.navbar {
+    margin-bottom: 0; 
+    border: 0;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+      margin-right: 15px;
+      margin-left: 15px;
+  }
   /* Remove the padding we set earlier */
   .header,
   .marketing,

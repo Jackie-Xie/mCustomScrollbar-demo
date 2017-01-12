@@ -1,0 +1,84 @@
+.demo-item {
+    overflow: auto;
+    padding: 10px;
+    background: #333;
+    margin: 10px 0;
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+}
+.demo-item.light{
+    background-color: #ddd;
+    color: #333;
+}
+.demo-item .poem{
+    border: 0;
+    margin-top: 10px;
+    padding: 10px;
+    color: #999;
+    background-color: transparent;
+}
+.demo-item.light .poem{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #444;
+    background-color: #eee;
+}
+.demo-item .poem:nth-child(even){
+    color: #ddd;
+}
+.demo-item.light .poem:nth-child(even){
+    color: #555;
+    background-color: #ddd;
+}
+.demo-item h4{
+    color: #6bdaea;
+}
+.demo-item.light h4{
+    color: #6b23ea;
+}
+.demo-item .sub-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #eee;
+}
+.light .sub-title {
+    color: #333;
+}
+.demo-item.light hr {
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.mCSB_container_wrapper > .mCSB_container {
+    padding-right: 0;
+}
+/* 浅色荧光 */
+.mCS-fluo-light.mCSB_scrollTools {
+    top: 0;
+    right: 0;
+}
+.mCS-fluo-light.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 8px;
+    background-color: #68d4fe;
+    box-shadow: 0 0 10px #68d4fe;
+}
+.mCS-fluo-light.mCSB_scrollTools .mCSB_draggerRail {
+    width: 4px;
+}
+
+/* 深色荧光 */
+.mCS-fluo-light-dark.mCSB_scrollTools {
+    top: 0;
+    right: 0;
+}
+.mCS-fluo-light-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 8px;
+    background-color: #3385ff;
+    box-shadow: 0 0 10px #3385ff;
+}
+.mCS-fluo-light-dark.mCSB_scrollTools .mCSB_draggerRail {
+    width: 4px;
+    border: none;
+    background-color: transparent;
+}

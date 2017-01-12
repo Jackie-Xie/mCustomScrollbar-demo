@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-		<meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>示例页面</title>
-        <base target="_self">
-        <meta name="description" content="">
+        <base target="_self" />
+        <meta name="description" content="" />
         <!-- lib css files -->
-        <link rel="stylesheet" href="src/css/lib/bootstrap_3.3.6.min.css">
-        <link rel="stylesheet" href="src/js/plugin/datetimepicker/bootstrap-datetimepicker.min.css">
-        <!-- app css files -->
-        <link rel="stylesheet" href="src/css/main.css">
-        <link rel="stylesheet" href="src/css/common/help.css">
+        <link rel="stylesheet" href="src/css/lib/bootstrap_3.3.6.min.css" />
+        <link rel="stylesheet" href="src/js/plugin/datetimepicker/bootstrap-datetimepicker.min.css" />
+        <!-- custom scrollbar stylesheet -->
+        <link rel="stylesheet" href="src/js/plugin/malihu-custom-scrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="src/js/plugin/malihu-custom-scrollbar/examples/style.css" />
         
+        <!-- app css files -->
+        <link rel="stylesheet" href="src/css/main.css" />
+        <!-- self scrollbar stylesheet -->
+        <link rel="stylesheet" href="src/css/common/scrollbar-prop.css" />
+        <link rel="stylesheet" href="src/css/common/scrollbar-themes.css" />
+
+        <link rel="shortcut icon" href="fav.ico" type="image/x-icon" /> 
+
     </head>
     <body ng-app="myappApp">
         <div ng-view=""></div>
         <!-- lib js files -->
 		<script src="src/js/lib/jquery_1.11.3.min.js"></script>
         <script src="src/js/lib/bootstrap_3.3.6.min.js"></script>
+        <!-- custom scrollbar plugin -->
+        <script src="src/js/plugin/malihu-custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        
         <script src="src/js/lib/angular/angular/angular.js"></script>
         <script src="src/js/lib/angular/angular-animate/angular-animate.js"></script>
         <script src="src/js/lib/angular/angular-cookies/angular-cookies.js"></script>
@@ -28,10 +39,14 @@
         <script src="src/js/lib/angular/angular-sanitize/angular-sanitize.js"></script>
         <script src="src/js/lib/angular/angular-touch/angular-touch.js"></script>
         <!-- <script src="src/js/lib/angular/angular-messages/angular-messages.js"></script> -->
+        
 		<!-- app js files -->
 		<script src="src/js/app.js"></script>
 		<script src="src/js/controllers/header.js"></script>
-		<script src="src/js/controllers/main.js"></script>
+		<script src="src/js/controllers/property.js"></script>
+        <script src="src/js/controllers/theme.js"></script>
+        <script src="src/js/controllers/function.js"></script>
+        <script src="src/js/controllers/combination.js"></script>
 		<script src="src/js/controllers/about.js"></script>
 	</body>
 </html>

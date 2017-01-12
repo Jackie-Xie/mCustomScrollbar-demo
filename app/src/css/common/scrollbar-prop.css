@@ -1,0 +1,45 @@
+.happy{
+	font-size: 22px;
+	color: #bbb;
+}
+pre{
+	color: #ddd;
+    background-color: rgba(47,19,35,1);
+    border: 1px solid #aaa;
+}
+.demo-item pre{
+	min-height: 315px;
+	margin: 0;
+}
+.properties{
+	overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.properties li{
+	font-size: 12px;
+}
+.mgb5{
+	margin-bottom: 5px;
+}
+.label-width-140{
+	float: left;
+	width: 140px;
+	font-weight: 500;
+	padding-top: 0;
+}
+.input-cutom .form-control{
+	height: 30px;
+    font-size: 12px;
+    color: #e3eeee;
+    background-color: #333;
+    border: 1px solid #666;
+}
+.input-cutom .text-control{
+	padding: 6px 12px;
+}
+.pre-col{
+	padding-left: 5px;
+	padding-right: 5px;
+}

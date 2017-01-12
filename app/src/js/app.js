@@ -20,15 +20,27 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
     	.when('/', {
-			redirectTo: '/homepage',
+			redirectTo: '/property',
 		})
-		.when('/homepage', {
-			templateUrl: 'views/main.html',
-			controller: 'MainCtrl'
+		.when('/property', {
+			templateUrl: 'views/property.html',
+			controller: 'PropController'
+		})
+		.when('/theme', {
+			templateUrl: 'views/theme.html',
+			controller: 'ThemeController'
+		})
+		.when('/function', {
+			templateUrl: 'views/function.html',
+			controller: 'FuncController'
+		})
+		.when('/combination', {
+			templateUrl: 'views/combination.html',
+			controller: 'CombController'
 		})
 		.when('/about', {
 			templateUrl: 'views/about.html',
-			controller: 'AboutCtrl'
+			controller: 'AboutController'
 		})
 		.when('/404', {
 			templateUrl: '404.html',
