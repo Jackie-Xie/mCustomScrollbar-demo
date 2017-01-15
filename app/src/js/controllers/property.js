@@ -12,8 +12,23 @@ angular.module('myappApp')
 
   		
 	    $scope.init = function () {
-	    	$scope.codeArr = ['s','s'];
-	    	$scope.properties = {};
+	    	$scope.properties = {
+	    		setWidth: false,                                 
+				setHeight: false,                                 
+				setTop: '0px',                               
+				setLeft: '0px',                              
+				axis:'yx',                                      
+                scrollbarPosition: "inside",    	
+				scrollInertia: 0,                            
+				autoDraggerLength: true,                        
+				autoHideScrollbar: false,                           
+				autoExpandScrollbar: false,                         
+				alwaysShowScrollbar: 0, 							  
+				snapAmount: [200,0],                                
+               	snapOffset: 100,                                   
+				theme: 'light',                                 
+                                                                   
+	    	};
 
 	    	$scope.scrollBarFormat();
 	    	$scope.codeSectionScrollBarFormat();
