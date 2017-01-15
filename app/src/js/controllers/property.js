@@ -29,14 +29,16 @@ angular.module('myappApp')
 	    $scope.codeSectionScrollBarFormat = function () {
 	    	$.mCustomScrollbar.defaults.scrollButtons.enable = true;
             $.mCustomScrollbar.defaults.axis = "yx"; 
-            $("#content-l").mCustomScrollbar({    				  
-				scrollInertia: 550,           
+            $("#content-code").mCustomScrollbar({    				  
+				scrollInertia: 550,
+				theme:'light-3',           
             });
             $('#code-section').mCustomScrollbar({
                 scrollbarPosition: "outside",    				  
 				scrollInertia: 550,                             
 				autoDraggerLength: true,              
-				autoHideScrollbar: true,                  
+				autoHideScrollbar: true,
+				theme:'light-3',                  
             });
 	    };
 
@@ -44,6 +46,9 @@ angular.module('myappApp')
 	    $scope.scrollBarFormat = function () {
 	    	$.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
             $.mCustomScrollbar.defaults.axis = "yx"; //enable 2 axis scrollbars by default
+
+            // 全屏幕的滚动条
+			$('.demo-content').mCustomScrollbar({theme:'3d-thick'});
 
             $('#content-prop').mCustomScrollbar({
                 setWidth: false,                                      // 设置内容的宽度 值可以是像素(int)或者百分(string)，默认false

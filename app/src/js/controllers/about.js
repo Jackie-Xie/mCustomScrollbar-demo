@@ -9,4 +9,6 @@
  */
 angular.module('myappApp')
   	.controller('AboutController', function ($scope) {
+  		// 全屏幕的滚动条
+		$('.demo-content').mCustomScrollbar({theme:'3d-thick'});
 	});
