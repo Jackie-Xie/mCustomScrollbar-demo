@@ -37,6 +37,7 @@
 }
 .demo-item h4{
     color: #6bdaea;
+    text-align: center;
 }
 .demo-item.light h4{
     color: #6b23ea;
@@ -45,6 +46,7 @@
     font-size: 12px;
     font-weight: 600;
     color: #eee;
+    padding-left: 10px;
 }
 .light .sub-title {
     color: #333;
@@ -52,6 +54,16 @@
 .demo-item.light hr {
     border-bottom: 1px solid rgba(255,255,255,0.6);
     border-top: 1px solid rgba(0,0,0,0.1);
+}
+.demo-item .poems{
+    margin: 0 auto;
+    width: 80%;
+}
+.page-header {
+    padding-bottom: 0;
+    margin: 10px 0;
+    border-bottom: 0;
+    text-align: left;
 }
 
 .mCSB_container_wrapper > .mCSB_container {

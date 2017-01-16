@@ -7,7 +7,7 @@
  * Controller of the myappApp
  */
 angular.module('myappApp')
-  	.controller('NavController', function ($scope, $location) {
+  	.controller('NavController', ['$scope','$location',function ($scope, $location) {
   		var viewWidth = $(window).width(),
   			viewHeight = $(window).height();
   		$scope.pathStr = '';
@@ -23,4 +23,4 @@ angular.module('myappApp')
 	    $scope.resetRender = function () {
 	    	$('.demo-content').css('height',viewHeight - 135);
 	    };
-  	});
+  	}]);

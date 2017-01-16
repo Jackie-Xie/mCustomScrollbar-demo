@@ -8,7 +8,7 @@
  * Controller of the myappApp
  */
 angular.module('myappApp')
-  	.controller('ThemeController', function ($scope) {
+  	.controller('ThemeController', ['$scope', function ($scope) {
 	    
 	    $scope.init = function () {
 	    	$scope.bindEvent();
@@ -78,4 +78,4 @@ angular.module('myappApp')
 			$("#content-fld").mCustomScrollbar({theme:"fluo-light-dark"});
 				
     	};
-  	});
+  	}]);

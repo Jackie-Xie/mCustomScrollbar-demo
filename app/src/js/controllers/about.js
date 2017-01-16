@@ -8,7 +8,7 @@
  * Controller of the myappApp
  */
 angular.module('myappApp')
-  	.controller('AboutController', function ($scope) {
+  	.controller('AboutController', ['$scope',function ($scope) {
   		// 全屏幕的滚动条
 		$('.demo-content').mCustomScrollbar({theme:'3d-thick'});
-	});
+	}]);
