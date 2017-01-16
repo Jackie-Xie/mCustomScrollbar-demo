@@ -92,7 +92,11 @@ angular.module('myappApp')
 	     */
 	    $scope.htmlCodeRun = function () {
           	htmlCode = htmlEditor.getValue();
-	    	$('#html_section').children().replaceWith(htmlCode);
+          	var leftCode = htmlCode.slice(0,4),
+          		rightCode = htmlCode.slice(4);
+          	console.log(leftCode + ' id="html_section" ' + rightCode);
+          	
+	    	$('#html_section').children().replaceWith(leftCode + ' id="html_section" ' + rightCode);
 	    };
 
 	    /*
