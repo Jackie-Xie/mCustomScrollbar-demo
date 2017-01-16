@@ -44,16 +44,11 @@ angular.module('myappApp')
 	    $scope.codeSectionScrollBarFormat = function () {
 	    	$.mCustomScrollbar.defaults.scrollButtons.enable = true;
             $.mCustomScrollbar.defaults.axis = "yx"; 
-            $("#content-code").mCustomScrollbar({    				  
+            $(".CodeMirror").mCustomScrollbar({    				  
 				scrollInertia: 550,
-				theme:'light-3',           
-            });
-            $('#code-section').mCustomScrollbar({
-                scrollbarPosition: "outside",    				  
-				scrollInertia: 550,                             
 				autoDraggerLength: true,              
 				autoHideScrollbar: true,
-				theme:'light-3',                  
+				theme:'light-3',           
             });
 	    };
 

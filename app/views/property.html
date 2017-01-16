@@ -223,14 +223,58 @@
 		        </div>
 		    </section>
 		    <section class="col-lg-6">
-		    	<div id="content-code" class="demo-item">
-		    		<pre id="code-section">(function($) {
-    $(window).on("load", function() {
-	    $.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
-	    $.mCustomScrollbar.defaults.axis = "yx"; //enable 2 axis scrollbars by default
-	    <span>sadasd</span><br />
-		    		</pre>
+		    	<div class="demo-item">
+		    		<form>
+			    		<textarea id="code" name="code" style="display: none;">
+			    		function findSequence(goal) {
+						  function find(start, history) {
+						    if (start == goal)
+						      return history;
+						    else if (start &gt; goal)
+						      return null;
+						    else
+						      return find(start + 5, "(" + history + " + 5)") ||
+						             find(start * 3, "(" + history + " * 3)");
+						  }
+						  return find(1, "1");
+						}
+						function findSequence(goal) {
+						  function find(start, history) {
+						    if (start == goal)
+						      return history;
+						    else if (start &gt; goal)
+						      return null;
+						    else
+						      return find(start + 5, "(" + history + " + 5)") ||
+						             find(start * 3, "(" + history + " * 3)");
+						  }
+						  return find(1, "1");
+						}
+						function findSequence(goal) {
+						  function find(start, history) {
+						    if (start == goal)
+						      return history;
+						    else if (start &gt; goal)
+						      return null;
+						    else
+						      return find(start + 5, "(" + history + " + 5)") ||
+						             find(start * 3, "(" + history + " * 3)");
+						  }
+						  return find(1, "1");
+						}
+						</textarea>
+					</form>
 		    	</div>
+		    	 <script>
+		          var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+		            lineNumbers: true,
+		            styleActiveLine: true,
+		            matchBrackets: true,
+		            mode: "javascript",
+		            theme: "monokai"
+		          });
+		          
+		        </script>
 		    </section>
 		</div>
 	</div>
