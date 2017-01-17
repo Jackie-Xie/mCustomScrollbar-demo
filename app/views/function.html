@@ -1,10 +1,11 @@
 <div class="header" ng-controller='NavController' ng-init="init()" ng-include="'views/header.html'"></div>
-<div class="container-fluid">
+<div class="container-fluid" ng-init="init()">
 	<div class="row">
 		<div class="col-lg-12 demo-content">
-			<section class="col-lg-3">
+			<section class="col-lg-6">
+				<a role="button" class="btn btn-default btn-float" ng-click="clickStop($event)"><i class="glyphicon {{isStopOrStart}}"></i></a>
 		        <!-- content -->
-		        <div id="content-myself" class="demo-item">
+		        <div id="content-scroll" class="demo-item">
 		            <h4>春江花月夜<span class="sub-title">&nbsp;&nbsp;&nbsp;&nbsp;张若虚</span>
 		            </h4>
 		            <hr/>
@@ -58,6 +59,122 @@
 
 		        </div>
 		    </section>
+		    <section class="col-lg-6 snap-scrolling-example">
+		    	<!-- content -->
+				<div id="content-snap" class="content horizontal-images">
+					<ul>
+						<li><img src="../src/images/img1.jpg" /></li>
+						<li><img src="../src/images/img2.jpg" /></li>
+						<li><img src="../src/images/img3.jpg" /></li>
+						<li><img src="../src/images/img4.jpg" /></li>
+						<li><img src="../src/images/img5.jpg" /></li>
+						<li><img src="../src/images/img6.jpg" /></li>
+						<li><img src="../src/images/img7.jpg" /></li>
+						<li><img src="../src/images/img1.jpg" /></li>
+						<li><img src="../src/images/img2.jpg" /></li>
+						<li><img src="../src/images/img3.jpg" /></li>
+						<li><img src="../src/images/img4.jpg" /></li>
+						<li><img src="../src/images/img5.jpg" /></li>
+						<li><img src="../src/images/img6.jpg" /></li>
+						<li><img src="../src/images/img7.jpg" /></li>
+					</ul>
+				</div>
+		    </section>
+
+		    <div class="col-lg-12 showcase scrollTo-demo">
+				<section id="info">
+					<div class="scrollTo">
+						<ul>
+							<li><span>Content y &rarr;</span></li>
+							<li><a href="#" rel="content-y" data-scroll-to="p:eq(2)">Scroll to 3rd paragraph</a></li>
+							<li><a href="#bottom" rel="content-y">Scroll to bottom</a></li>
+							<li><a href="#" rel="content-y" data-scroll-to="p:eq(0)">Scroll to 1st paragraph</a></li>
+							<li><a href="#850" rel="content-y">Scroll to 850 pixels</a></li>
+							<li><a href="#-=100" rel="content-y">Scroll by 100 pixels more</a></li>
+							<li><a href="#+=100" rel="content-y">Scroll by 100 pixels less</a></li>
+							<li><a href="#50%" rel="content-y">Scroll to 50%</a></li>
+						</ul>
+					</div>
+					<div class="scrollTo">
+						<ul>
+							<li><span>Content x &rarr;</span></li>
+							<li><a href="#10%" rel="content-x">Scroll to 10%</a></li>
+							<li><a href="##test-id" rel="content-x">Scroll to (id) red paragraph</a></li>
+							<li><a href="#" rel="content-x" data-scroll-to="#test-id+p">Scroll to the paragraph next to the red one</a></li>
+							<li><a href="#-=350" rel="content-x">Scroll by 350 pixels more (paragraph's outer width)</a></li>
+							<li><a href="#first" rel="content-x">Scroll to 1st element</a></li>
+						</ul>
+					</div>
+					<div class="scrollTo">
+						<ul>
+							<li><span>Content yx &rarr;</span></li>
+							<li><a href="#" rel="content-yx" data-scroll-to="p:eq(4)">Scroll to 5th paragraph</a></li>
+							<li><a href="#['bottom','right']" rel="content-yx">Scroll to bottom/right</a></li>
+							<li><a href="#'last'" rel="content-yx">Scroll to last element</a></li>
+							<li><a href='#{y:"450",x:"250"}' rel="content-yx">Scroll to y:450, x:250 pixels</a></li>
+							<li><a href="#['-=100','-=50']" rel="content-yx">Scroll by y:100 and x:50 pixels more</a></li>
+							<li><a href="#['top',null]" rel="content-yx">Scroll to top</a></li>
+						</ul>
+					</div>
+					<p>Function called: <code>&nbsp;</code></p>
+				</section>
+				<section id="examples">
+					
+					<!-- content -->
+					<div class="content demo-y">
+						<h2>Content y</h2>
+						<hr />
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p> 
+						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p> 
+						<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p> 
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p> 
+						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+						<hr />
+						<p>End of content.</p>
+					</div>
+					
+					<!-- content -->
+					<div class="content demo-x">
+						<h2>Content x</h2>
+						<hr />
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+						<p id="test-id">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p> 
+						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+						<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p> 
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+						<p>End of content.</p>
+					</div>
+					
+					<!-- content -->
+					<div class="content demo-yx">
+						<h2>Content yx</h2>
+						<hr />
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p> 
+						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p> 
+						<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p> 
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+						<hr />
+						<p>End of content.</p>
+					</div>
+					
+				</section>
+			</div>
 	    </div>
 	</div>
 </div>

@@ -238,6 +238,8 @@
 		    <section class="col-lg-6">
 		    	<h1 class="page-header">JavaScript</h1>	
 		    	<div class="demo-item">
+		    		<a role="button" title="undo" class="btn btn-default btn-float undo" ng-click="jsUndo()"><i class="glyphicon glyphicon-share-alt rotateY"></i></a>
+		    		<a role="button" title="redo" class="btn btn-default btn-float redo" ng-click="jsRedo()"><i class="glyphicon glyphicon-share-alt"></i></a>
 		    		<form id="js-code-section">
 			    		<textarea id="jscode" name="jscode" style="display: none;">
 $.mCustomScrollbar.defaults.scrollButtons.enable = true;         // enable scrolling buttons by default
@@ -336,6 +338,8 @@ $('#content-prop').mCustomScrollbar({
 		    <section class="col-lg-6">
 		    	<h1 class="page-header">HTML</h1>	
 		    	<div class="demo-item">
+		    		<a role="button" title="undo" class="btn btn-default btn-float undo" ng-click="htmlUndo()"><i class="glyphicon glyphicon-share-alt rotateY"></i></a>
+		    		<a role="button" title="redo" class="btn btn-default btn-float redo" ng-click="htmlRedo()"><i class="glyphicon glyphicon-share-alt"></i></a>
 		    		<form id="html-code-section">
 			    		<textarea id="htmlcode" name="htmlcode" style="display: none;">
 <div class="demo-item">
@@ -403,8 +407,10 @@ $('#content-prop').mCustomScrollbar({
 
 		    <!-- css 代码编辑 -->
 		    <section class="col-lg-6">
-		    	<h1 class="page-header">Result</h1>	
+		    	<h1 class="page-header">CSS</h1>	
 		    	<div class="demo-item">
+		    		<a role="button" title="undo" class="btn btn-default btn-float undo" ng-click="cssUndo()"><i class="glyphicon glyphicon-share-alt rotateY"></i></a>
+		    		<a role="button" title="redo" class="btn btn-default btn-float redo" ng-click="cssRedo()"><i class="glyphicon glyphicon-share-alt"></i></a>
 		    		<form id="css-code-section">
 			    		<textarea id="csscode" name="csscode" style="display: none;">
 .mCSB_container_wrapper > .mCSB_container {

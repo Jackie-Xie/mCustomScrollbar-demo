@@ -52,6 +52,28 @@ angular.module('myappApp')
 	    	$scope.cssCodeRun();
 	    	$scope.jsCodeRun();
 	    };
+	    
+	    /*
+	     * 各种redo和undo
+	     */
+	    $scope.jsRedo = function () {
+			jsEditor.redo();
+	    };
+	    $scope.jsUndo = function () {
+	    	jsEditor.undo();
+	    };
+	    $scope.cssRedo = function () {
+			cssEditor.redo();
+	    };
+	    $scope.cssUndo = function () {
+			cssEditor.undo();
+	    };
+	    $scope.htmlRedo = function () {
+			htmlEditor.redo();
+	    };
+	    $scope.htmlUndo = function () {
+			htmlEditor.undo();
+	    };
 
 	    /*
 	     * js作用到页面
@@ -94,9 +116,9 @@ angular.module('myappApp')
           	htmlCode = htmlEditor.getValue();
           	var leftCode = htmlCode.slice(0,4),
           		rightCode = htmlCode.slice(4);
-          	console.log(leftCode + ' id="html_section" ' + rightCode);
+          	console.log(leftCode + ' id="content-prop" ' + rightCode);
           	
-	    	$('#html_section').children().replaceWith(leftCode + ' id="html_section" ' + rightCode);
+	    	$('#html_section').empty().append('<h1 class="page-header">Result</h1>	' + leftCode + ' id="content-prop" ' + rightCode);
 	    };
 
 	    /*
@@ -246,6 +268,7 @@ angular.module('myappApp')
 					onSelectorChange: function(){},
 
 				}*/
+				
             });
 
 	    };

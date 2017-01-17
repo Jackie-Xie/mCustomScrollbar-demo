@@ -38,6 +38,10 @@ angular
 			templateUrl: 'views/combination.html',
 			controller: 'CombController'
 		})
+		.when('/other', {
+			templateUrl: 'views/other.html',
+			controller: 'OtherController'
+		})
 		.when('/about', {
 			templateUrl: 'views/about.html',
 			controller: 'AboutController'
