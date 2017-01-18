@@ -1,0 +1,35 @@
+.ui-widget-content {
+	line-height: 2em;
+    font-size: 14px;
+	border-color: #888;    
+	background: #888;
+    color: #fff;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	border-color: #888; 
+    background: #888;
+    color: #fff;
+}
+.ui-accordion .ui-accordion-content {
+    padding: 0 0.8em 0 1.5em;
+}
+.ui-accordion .ui-accordion-header {
+    /*font-style: normal;*/
+    font-size: 18px;
+    font-weight: 600;
+    color: #6bdaea;
+    text-align: center;
+}
+.ui-accordion .ui-accordion-header .sub-title{
+    font-size: 12px;
+    font-weight: 600;
+    color: #eee;
+    padding-left: 10px;
+}
+section h3{
+    font-size: 16px;
+    padding-left: 5px;
+}
+.content textarea {
+    width: 100%;
+}

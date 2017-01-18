@@ -53,10 +53,14 @@ code{
     padding: 5px 10px;
 }
 .scrollTo-demo .demo-y {
+    width: 20%;
     height: 290px;
 }
+.scrollTo-demo .demo-x {
+    width: 35%;
+}
 .scrollTo-demo .demo-yx {
-    width: 760px;
+    width: 40%;
 }
 .snap-scrolling-example .content {
     height: 220px;
