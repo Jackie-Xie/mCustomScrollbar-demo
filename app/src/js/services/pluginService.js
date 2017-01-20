@@ -5,7 +5,9 @@ angular.module('myappApp')
 	// 默认插件初始化
 	this.formatPlugin = function () {
 		/* all available option parameters with their default values */
-		
+		$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
+		$.mCustomScrollbar.defaults.axis="yx"; //enable 2 axis scrollbars by default
+			
 		$('.content').mCustomScrollbar({
 			setWidth:false,
 			setHeight:false,

@@ -45,13 +45,50 @@ angular.module('myappApp')
 			// 组合textarea
 	    	$scope.textarea ();
 
-	    	// 组合colorbox
-	    	$scope.colorbox ();
+	    	// 组合Bootstrap
+	    	$scope.withBootstrap ();
 	    };
 
-	    // 组合colorbox
-	    $scope.colorbox = function () {
-	    	
+	    // 组合Bootstrap
+	    $scope.withBootstrap = function () {
+	    	$(".dropdown-menu-scrollbar").mCustomScrollbar({
+				theme:"minimal-dark",
+				mouseWheel:{ preventDefault:true }
+			});
+			
+			$(".selectpicker").selectpicker();
+			
+			$(".dropdown-menu .dropdown-menu").mCustomScrollbar({
+				setHeight:240,
+				theme:"inset-dark",
+				mouseWheel:{ preventDefault:true }
+			});
+			
+			$(".dropdown-menu, html").on("mouseup pointerup",function(e){
+				$(".dropdown-menu .mCSB_scrollTools").removeClass("mCSB_scrollTools_onDrag");
+			}).on("click",function(e){
+				if($(e.target).parents(".mCSB_scrollTools").length || $(".dropdown-menu .mCSB_scrollTools").hasClass("mCSB_scrollTools_onDrag")){ 
+					e.stopPropagation(); 
+				}
+			});
+			
+			$(".modal-content .modal-body").mCustomScrollbar({
+				setHeight:340,
+				theme:"minimal-dark"
+			});
+			
+			$("#accordion .panel-body").mCustomScrollbar({
+				setHeight:300,
+				theme:"dark-3"
+			});
+			
+			$("#myTab .tab-pane").mCustomScrollbar({
+				setHeight:280,
+				theme:"inset-2"
+			});
+
+			PluginService.formatPlugin ();
+				
 	    };
 
 	    // 组合textarea

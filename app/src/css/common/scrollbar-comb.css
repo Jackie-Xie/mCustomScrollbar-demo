@@ -33,3 +33,27 @@ section h3{
 .content textarea {
     width: 100%;
 }
+.textarea-example .content ,
+.textarea-example .mCSB_container{
+     width: auto !important; 
+}
+.textarea-example .content textarea {
+    height: auto; 
+    width: 100%;
+}
+
+/* bootstrap 结合 */
+.dropdown-menu{ max-height: 240px; }
+.dropdown-menu li a{
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.dropdown-menu li a:hover{ 
+    background-color: #eee; 
+    text-decoration: none;
+}

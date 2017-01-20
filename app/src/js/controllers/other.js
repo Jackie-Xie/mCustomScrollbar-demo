@@ -20,13 +20,23 @@ angular.module('myappApp')
 
 			// 全屏幕的滚动条
 			$('.demo-content').mCustomScrollbar({theme:'3d-thick'});
+
 			$("#content-1,#content-2").mCustomScrollbar({
 				theme:"3d-thick",
 				scrollInertia:550,
-				scrollbarPosition:"outside"
+				scrollbarPosition:"inside"
 			});
-			
-			PluginService.formatPlugin();	
+
+			$("#gridSnap").mCustomScrollbar({
+				snapAmount:40,
+				scrollButtons:{enable:true},
+				keyboard:{scrollAmount:40},
+				mouseWheel:{deltaFactor:40},
+				scrollInertia:400
+			});
+
+			PluginService.formatPlugin();
+				
     	};
 
   	}]);
