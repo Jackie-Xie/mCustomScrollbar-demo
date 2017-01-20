@@ -1,0 +1,15 @@
+.item{
+	padding: 10px 0;
+	margin: 10px 0;
+}
+.item pre{
+	background: #272822;
+	color: #fff;
+	text-align: left;
+}
+.item img{
+	padding: 20px 5px;
+}
+.item .layout-image{
+	background-color: #ccc;
+}

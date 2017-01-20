@@ -34,6 +34,10 @@ angular
 			templateUrl: 'views/function.html',
 			controller: 'FuncController'
 		})
+		.when('/func-ex', {
+			templateUrl: 'views/function-ex.html',
+			controller: 'FuncExController'
+		})
 		.when('/combination', {
 			templateUrl: 'views/combination.html',
 			controller: 'CombController'

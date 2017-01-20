@@ -66,6 +66,20 @@ code{
     height: 220px;
     width: 853px;
 }
+#infinite-scroll .offset .indicator {
+    background: #ffed0d url(../../images/loading.gif) no-repeat center center;
+}
+.init-hidden .view-section {
+    min-height: 420px;
+}
+
+.view-section {
+    background-color: #191919;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+}
 
 
 
