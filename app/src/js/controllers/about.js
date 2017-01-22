@@ -16,7 +16,9 @@ angular.module('myappApp')
 
   		$scope.bindEvent = function () {
   			// 全屏幕的滚动条
-			$('.demo-content').mCustomScrollbar({theme:'3d-thick'});
+			  $('.demo-content').mCustomScrollbar({theme:'3d-thick'});
+
+
   		};
 		
 	}]);

@@ -48,45 +48,45 @@ mCSB_buttons.png
 		</section>
 		<section class="item">
 			<h4>四、mCustomScrollbar 的参数：</h4>
-			<pre>
-setWidth: false,                 							// 设置内容的宽度 值可以是像素(int)或者百分(string)，默认false
-setHeight: false,											// 设置内容的高度 值可以是像素(int)或者百分(string)，默认false
-setTop: '0px',												// 设置内容的位置的top属性(string),默认0
-setLeft: '0px',												// 设置内容的位置的Left属性(string),默认0
-axis: 'y',  												// 定义内容滚动轴线,'x'为水平，'y'为垂直(默认)，'yx'为两个方向都有
-scrollbarPosition: "outside",    				  			// 定义滚动条的位置是在选择器选择的元素的里面还是外面，默认inside
-scrollInertia: 550,											// 设置滚动条的惯性值，滚动到底所需毫秒数，值越大滚动越慢，0为disable
-autoDraggerLength: true,									// 设置滑块长度是否自动，默认是true，设置成false，则可以在样式中设置固定长度的滚动条
-autoHideScrollbar: false,                          			// 是否自动隐藏那个滑块，默认是false
-autoExpandScrollbar: true,                       			// 设置滚动条获取焦点，或拖拽滚动条是，是否扩大滚动条
-alwaysShowScrollbar: 0, 							  		// 设置是否保持滚动条显示，甚至没有内容也显示，0–无效(default)，1–轨道可见，2–全可见
+			<pre class="code-sec">
+setWidth: false,                 // 设置内容的宽度 值可以是像素(int)或者百分(string)，默认false
+setHeight: false,                // 设置内容的高度 值可以是像素(int)或者百分(string)，默认false
+setTop: '0px',	                 // 设置内容的位置的top属性(string),默认0
+setLeft: '0px',	                 // 设置内容的位置的Left属性(string),默认0
+axis: 'y',                       // 定义内容滚动轴线,'x'为水平，'y'为垂直(默认)，'yx'为两个方向都有
+scrollbarPosition: "outside",    // 定义滚动条的位置是在选择器选择的元素的里面还是外面，默认inside
+scrollInertia: 550,              // 设置滚动条的惯性值，滚动到底所需毫秒数，值越大滚动越慢，0为disable
+autoDraggerLength: true,         // 设置滑块长度是否自动，默认是true，设置成false，则可以在样式中设置固定长度的滚动条
+autoHideScrollbar: false,        // 是否自动隐藏那个滑块，默认是false
+autoExpandScrollbar: true,       // 设置滚动条获取焦点，或拖拽滚动条是，是否扩大滚动条
+alwaysShowScrollbar: 0,          // 设置是否保持滚动条显示，甚至没有内容也显示，0–无效(default)，1–轨道可见，2–全可见
 snapAmount: [200,0],                                		
 	snapOffset: 100,                                    
-// theme: 'fluo-light',                                 	// 使用自定义样式
+// theme: 'fluo-light',          // 使用自定义样式
 // live: true,                                           	
 // liveSelector: "#content-copy",
 mouseWheel:{
-	enable: false,                                 			// 鼠标滚轮是否有效
-	scrollAmount: 100,                            			// 设置鼠标滚轮每步滚动的像素值，默认auto
-	axis: 'x',                                     			// 鼠标滚轮滚动x轴还是y轴的滚动滑块，默认'y',为什么'x'无效
+	enable: false,               // 鼠标滚轮是否有效
+	scrollAmount: 100,           // 设置鼠标滚轮每步滚动的像素值，默认auto
+	axis: 'x',                   // 鼠标滚轮滚动x轴还是y轴的滚动滑块，默认'y',为什么'x'无效
 	preventDefault: true,                           
-	deltaFactor: 10,                               			// 设置一个滚动轮槽口（one wheel notch scrolls）的滚动像素，默认auto，为浏览器或操作系统默认
-	normalizeDelta: true,                          			// 启用或禁用鼠标轮加速度 (Δ),
-	invert: true,                                  			// 反转鼠标滚轮的滚动方向。
+	deltaFactor: 10,             // 设置一个滚动轮槽口（one wheel notch scrolls）的滚动像素，默认auto，为浏览器或操作系统默认
+	normalizeDelta: true,        // 启用或禁用鼠标轮加速度 (Δ),
+	invert: true,                // 反转鼠标滚轮的滚动方向。
 	disableOver: ["select","option","keygen","datalist","textarea"], // 设置当光标正在该标签禁用鼠标滚轮值,默认["select","option","keygen","datalist","textarea"]
 },
 scrollButtons:{
-	enable:false,                                  			// 设置滚动按钮是否有效
+	enable:false,                // 设置滚动按钮是否有效
 	scrollType:"continuous",                       			
-	scrollSpeed:20,                                			// 设置点击滚动按钮时候的滚动速度(默认 20) 设置一个更高的数值可以更快的滚动
-	scrollAmount:40,                               			// 设置按钮的滚动量(单位：像素）
-	tabindex:100                                   			// 设置按钮的tabindex值
+	scrollSpeed:20,              // 设置点击滚动按钮时候的滚动速度(默认 20) 设置一个更高的数值可以更快的滚动
+	scrollAmount:40,             // 设置按钮的滚动量(单位：像素）
+	tabindex:100                 // 设置按钮的tabindex值
 },
 keyboard:{
-	enable:false,                                  			// 启用或禁用通过键盘滚动内容。
-	scrollType:"continuous",                       			// 同上
-	scrollSpeed:20,                                			// 同上
-	scrollAmount:40                                			// 同上
+	enable:false,                // 启用或禁用通过键盘滚动内容。
+	scrollType:"continuous",     // 同上
+	scrollSpeed:20,              // 同上
+	scrollAmount:40              // 同上
 },
 // contentTouchScroll: 10,
 // documentTouchScroll: false,
