@@ -62,6 +62,62 @@ code{
 .scrollTo-demo .demo-yx {
     width: 40%;
 }
+@media (max-width: 1300px){
+    .scrollTo-demo .demo-y {
+        width: 20%;
+    }
+    .scrollTo-demo .demo-x {
+        width: 34%;
+    }
+    .scrollTo-demo .demo-yx {
+        width: 40%;
+    }
+}
+@media (max-width: 1100px){
+    .scrollTo-demo .demo-y {
+        width: 20%;
+    }
+    .scrollTo-demo .demo-x {
+        width: 34%;
+    }
+    .scrollTo-demo .demo-yx {
+        width: 39%;
+    }
+}
+@media (max-width: 960px){
+    .scrollTo-demo .demo-y {
+        width: 20%;
+    }
+    .scrollTo-demo .demo-x {
+        width: 34%;
+    }
+    .scrollTo-demo .demo-yx {
+        width: 38%;
+    }
+}
+@media (max-width: 850px){
+    .scrollTo-demo .demo-y {
+        width: 19%;
+    }
+    .scrollTo-demo .demo-x {
+        width: 34%;
+    }
+    .scrollTo-demo .demo-yx {
+        width: 38%;
+    }
+}
+@media (max-width: 768px){
+    .scrollTo-demo .demo-y {
+        width: 100%;
+    }
+    .scrollTo-demo .demo-x {
+        width: 100%;
+    }
+    .scrollTo-demo .demo-yx {
+        width: 100%;
+    }
+}
+
 .snap-scrolling-example .content {
     height: 220px;
     width: 853px;

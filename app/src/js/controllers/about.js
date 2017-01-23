@@ -8,16 +8,22 @@
  * Controller of the myappApp
  */
 angular.module('myappApp')
-  	.controller('AboutController', ['$scope','$timeout',function ($scope,$timeout) {
+  	.controller('AboutController', ['$scope',function ($scope) {
   		$scope.init = function () {
-
-  			$timeout($scope.bindEvent,500);
+  			$scope.bindEvent();
   		};
 
   		$scope.bindEvent = function () {
+        $.mCustomScrollbar.defaults.scrollButtons.enable = true; 
+        $.mCustomScrollbar.defaults.axis = "yx";
+
   			// 全屏幕的滚动条
 			  $('.demo-content').mCustomScrollbar({theme:'3d-thick'});
 
+        $('.code-sec').mCustomScrollbar({
+          theme:'light'
+
+        });
 
   		};
 		

@@ -69,6 +69,9 @@ textarea {
 }
 
 /* my style */
+.header{
+    background-color: #333;
+}
 .navbar-default {
     background-color: #333;
     border-color: #444;
@@ -90,6 +93,17 @@ textarea {
     margin-bottom: 0; 
     border: 0;
 }
+@media (min-width: 768px) and (max-width: 800px){
+  .navbar-nav>li>a {
+      padding: 15px 5px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px){
+  .navbar-nav>li>a {
+      padding: 15px 8px;
+  }
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
