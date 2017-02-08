@@ -19,6 +19,9 @@
     -webkit-transition: all 1s;
     -o-transition: all 1s;
 }
+.btn-float .copy{
+    font-size: 18px;
+}
 .btn-float i{
     margin-top: -1px;
     margin-left: 1px;
@@ -40,17 +43,42 @@
 }
 .undo{
     top: 0;
-    right: 100px;
+    right: 150px;
 }
 .redo{
+    top: 0;
+    right: 100px;  
+}
+.copy-code{
     top: 0;
     right: 50px;  
 }
 code{
     display: inline-block;
     width: 100%;
+    min-height: 40px;
     background-color: #272822;
-    padding: 5px 10px;
+    color: #f4f926;
+    padding: 10px;
+}
+.copy{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../../images/copy.png) no-repeat center center;
+}
+#info p {
+    color: #eee;
+    padding: 0;
+    margin-top: 10px;
+}
+.scrollTo + .scrollTo {
+    margin-top: 0;
+}
+.scrollTo {
+    min-height: 210px;
+    padding: 0 20px;
+    background: transparent;
 }
 .scrollTo-demo .demo-y {
     width: 20%;
@@ -62,6 +90,36 @@ code{
 .scrollTo-demo .demo-yx {
     width: 40%;
 }
+
+.scrollTo-demo .btn-y {
+    width: 20%;
+}
+.scrollTo-demo .btn-x {
+    width: 35%;
+}
+.scrollTo-demo .btn-yx {
+    width: 40%;
+}
+
+.btn-l{
+    font-size: 12px;
+}
+.scrollTo ul li a {
+    padding: 2px 8px;
+    color: #aaa;
+}
+.scrollTo ul li span{
+    font-weight: 600;
+    color: #EEE;
+}
+.scrollTo ul li:first-child span {
+    padding: 2px 8px;
+}
+.btn-l:focus, .btn-l:hover {
+    color: #FF0;
+    outline: 0;
+}
+
 @media (max-width: 1300px){
     .scrollTo-demo .demo-y {
         width: 20%;
@@ -135,6 +193,21 @@ code{
     padding: 5px;
     margin: 10px 0;
     overflow: hidden;
+}
+.callbacks + p span {
+    padding: 8px 15px;
+}
+.h445{
+    height: 445px;
+}
+.h510{
+    height: 510px;
+}
+.h445 .CodeMirror{
+    height: 425px;
+}
+.h510 .CodeMirror{
+    height: 490px;
 }
 
 

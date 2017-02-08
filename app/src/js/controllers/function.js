@@ -9,7 +9,8 @@
  */
 angular.module('myappApp')
   	.controller('FuncController', ['$scope','$timeout',function ($scope, $timeout) {
-	    var content=$("#content-scroll"),autoScrollTimerAdjust,autoScroll,
+	    var jsAutoEditor,jsScrollEditor,
+	    	content=$("#content-scroll"),autoScrollTimerAdjust,autoScroll,
 	    	autoScrollParameter = {
 	    		autoScrollTimer:8000 ,
 	    		isNeedBtn: true
@@ -18,6 +19,8 @@ angular.module('myappApp')
 	    $scope.init = function () {
 	    	$scope.isStopOrStart = 'glyphicon glyphicon-pause';
 	    	
+	    	$scope.jsEditFormat();
+
 	    	$timeout($scope.bindEvent,500);
 	    };
 
@@ -32,6 +35,8 @@ angular.module('myappApp')
 			//自动滚动的滚动条
 			content.mCustomScrollbar({theme:'light-3'});
 			$scope.autoScroll();
+
+			$scope.codeSectionScrollBarFormat();
 
 			/* 
 			 * get snap amount programmatically or just set it directly (e.g. "273") 
@@ -85,6 +90,42 @@ angular.module('myappApp')
 				
 	    };
 
+	     /*
+    	 * 代码区域滚动条格式化
+	     */
+	    $scope.codeSectionScrollBarFormat = function () {
+	    	$.mCustomScrollbar.defaults.scrollButtons.enable = true;
+            $.mCustomScrollbar.defaults.axis = "yx"; 
+            $(".CodeMirror").mCustomScrollbar({    				  
+				scrollInertia: 550,
+				autoDraggerLength: true,              
+				autoHideScrollbar: true,
+				theme:'light-3',           
+            });
+	    };
+
+	    /*
+	     * 格式化js代码编辑器
+	     */
+	    $scope.jsEditFormat = function () {
+	          jsAutoEditor = CodeMirror.fromTextArea(document.getElementById("autocode"), {
+	            lineNumbers: true,
+	            styleActiveLine: true,
+	            matchBrackets: true,
+	            mode: "javascript",
+	            theme: "monokai"
+	          });
+
+	          jsScrollEditor = CodeMirror.fromTextArea(document.getElementById("scrollcode"), {
+	            lineNumbers: true,
+	            styleActiveLine: true,
+	            matchBrackets: true,
+	            mode: "javascript",
+	            theme: "monokai"
+	          });
+
+	    };
+
 	    /*
 	     * 自动滚动
 	     */
@@ -92,7 +133,7 @@ angular.module('myappApp')
 	    	var isNeedBtn = autoScrollParameter.isNeedBtn,
 	    		autoScrollTimer = autoScrollParameter.autoScrollTimer;
 
-	    	console.log(isNeedBtn + ',' + autoScrollTimer);
+	    	//console.log(isNeedBtn + ',' + autoScrollTimer);
 
 			content.mCustomScrollbar({
 				scrollButtons:{enable: isNeedBtn },

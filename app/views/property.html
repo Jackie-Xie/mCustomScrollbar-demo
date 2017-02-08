@@ -2,170 +2,6 @@
 <div class="container-fluid" ng-init="init()">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 demo-content">
-			<!-- <section class="operate-section">
-				<ul class="col-lg-12 form-horizontal properties">
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_setWidth">setWidth：</label>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<input type="number" min="0" id="J_setWidth" class="form-control" ng-model="properties.setWidth">
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<select class="form-control" ng-model="properties.widthUnit">
-								<option value="px">px</option>
-								<option value="%">%</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_setHeight">setHeight：</label>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<input type="number" min="0" id="J_setHeight" class="form-control" ng-model="properties.setHeight">
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<select class="form-control" ng-model="properties.heightUnit">
-								<option value="px">px</option>
-								<option value="%">%</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_setTop">setTop：</label>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<input type="number" id="J_setTop" class="form-control" ng-model="properties.setTop">
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<div class="text-left text-control">
-								px
-							</div>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_setLeft">setLeft：</label>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<input type="number" id="J_setLeft" class="form-control" ng-model="properties.setLeft">
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<div class="text-left text-control">
-								px
-							</div>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_axis">axis：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<select id="J_axis" class="form-control" ng-model="properties.axis">
-								<option value="x">x</option>
-								<option value="y">y</option>
-								<option value="yx">yx</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_scrollbarPosition">scrollbarPosition：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<select id="J_scrollbarPosition" class="form-control" ng-model="properties.scrollbarPosition">
-								<option value="inside">inside</option>
-								<option value="outside">outside</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_scrollInertia">scrollInertia：</label>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<input type="text" id="J_scrollInertia" class="form-control" ng-model="properties.scrollInertia">
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<div class="text-left text-control">
-								ms
-							</div>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_autoDraggerLength">autoDraggerLength：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<select id="J_autoDraggerLength" class="form-control" ng-model="properties.autoDraggerLength">
-								<option value="true">true</option>
-								<option value="false">false</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_autoHideScrollbar">autoHideScrollbar：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<select id="J_autoHideScrollbar" class="form-control" ng-model="properties.autoHideScrollbar">
-								<option value="true">true</option>
-								<option value="false">false</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_autoExpandScrollbar">autoExpandScrollbar：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<select id="J_autoExpandScrollbar" class="form-control" ng-model="properties.autoExpandScrollbar">
-								<option value="true">true</option>
-								<option value="false">false</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_alwaysShowScrollbar">alwaysShowScrollbar：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<select id="J_alwaysShowScrollbar" class="form-control" ng-model="properties.alwaysShowScrollbar">
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-							</select>
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_snapAmount">snapAmount：</label>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col">
-							<input type="number" id="J_snapAmount" class="form-control" ng-model="properties.setHeight">
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 input-cutom pre-col" ng-model="properties.snapAmount">
-							<input type="number" class="form-control">
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_snapOffset">snapOffset：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<input type="number" id="J_snapOffset" class="form-control" ng-model="properties.snapOffset">
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_snapOffset">snapOffset：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<input type="number" id="J_snapOffset" class="form-control" ng-model="properties.snapOffset">
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5">
-						<label class="control-label label-width-140" for="J_snapOffset">snapOffset：</label>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-cutom pre-col">
-							<input type="number" id="J_snapOffset" class="form-control" ng-model="properties.snapOffset">
-						</div>
-					</li>
-					<li class="col-lg-3 form-group mgb5 text-right">
-						<a role="button" class="btn btn-success" ng-click="setProp()">setProp</a>
-					</li>
-				</ul>
-			</section>
-			<hr />
-
-			<section class="operate-section">
-				<h5>mouseWheel：</h5>
-			</section class="operate-section">
-			<hr />
-
-			<section class="operate-section">
-				<h5>scrollButtons：</h5>
-			</section>
-			<hr />
-
-			<section class="operate-section">
-				<h5>keyboard：</h5>
-			</section>
-			<hr /> -->
-
 			<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
 				<a role="button" class="btn btn-success" ng-click="refresh()">重置</a>
 				<a role="button" class="btn btn-success" ng-click="running()">运行</a>
@@ -240,6 +76,7 @@
 		    	<div class="demo-item">
 		    		<a role="button" title="undo" class="btn btn-default btn-float undo" ng-click="jsUndo()"><i class="glyphicon glyphicon-share-alt rotateY"></i></a>
 		    		<a role="button" title="redo" class="btn btn-default btn-float redo" ng-click="jsRedo()"><i class="glyphicon glyphicon-share-alt"></i></a>
+		    		<a role="button" title="复制" class="btn btn-default btn-float copy-code" ng-click="copy('js')"><span class="copy"></span></a>
 		    		<form id="js-code-section">
 			    		<textarea id="jscode" name="jscode" style="display: none;">
 $.mCustomScrollbar.defaults.scrollButtons.enable = true;         // enable scrolling buttons by default
@@ -340,6 +177,7 @@ $('#content-prop').mCustomScrollbar({
 		    	<div class="demo-item">
 		    		<a role="button" title="undo" class="btn btn-default btn-float undo" ng-click="htmlUndo()"><i class="glyphicon glyphicon-share-alt rotateY"></i></a>
 		    		<a role="button" title="redo" class="btn btn-default btn-float redo" ng-click="htmlRedo()"><i class="glyphicon glyphicon-share-alt"></i></a>
+		    		<a role="button" title="复制" class="btn btn-default btn-float copy-code" ng-click="copy('html')"><span class="copy"></span></a>
 		    		<form id="html-code-section">
 			    		<textarea id="htmlcode" name="htmlcode" style="display: none;">
 <div class="demo-item">
@@ -411,6 +249,7 @@ $('#content-prop').mCustomScrollbar({
 		    	<div class="demo-item">
 		    		<a role="button" title="undo" class="btn btn-default btn-float undo" ng-click="cssUndo()"><i class="glyphicon glyphicon-share-alt rotateY"></i></a>
 		    		<a role="button" title="redo" class="btn btn-default btn-float redo" ng-click="cssRedo()"><i class="glyphicon glyphicon-share-alt"></i></a>
+		    		<a role="button" title="复制" class="btn btn-default btn-float copy-code" ng-click="copy('css')"><span class="copy"></span></a>
 		    		<form id="css-code-section">
 			    		<textarea id="csscode" name="csscode" style="display: none;">
 .mCSB_container_wrapper > .mCSB_container {

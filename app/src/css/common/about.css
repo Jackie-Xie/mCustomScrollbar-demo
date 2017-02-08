@@ -2,7 +2,7 @@
 	padding: 10px 0;
 	margin: 10px 0;
 }
-.item pre{
+.item pre,.code-sec{
 	background: #272822;
 	color: #fff;
 	text-align: left;

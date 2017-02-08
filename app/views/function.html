@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 demo-content">
 			<section class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<h3 class="page-header">自动回滚：</h3>
 				<a role="button" class="btn btn-default btn-float" ng-click="clickStop($event)"><i class="glyphicon {{isStopOrStart}}"></i></a>
 		        <!-- content -->
 		        <div id="content-scroll" class="demo-item">
@@ -59,6 +60,72 @@
 
 		        </div>
 		    </section>
+
+		    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		    	<h3 class="page-header">自动回滚代码如下：</h3>
+		    	<div class="demo-item">
+		    		<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy('autocode')"><span class="copy"></span></a>
+		    		<form>
+			    		<textarea id="autocode" name="autocode" style="display: none;">
+(function($){
+	$(window).on("load",function(){
+
+		var content=$("#content-scroll"),autoScrollTimer=8000,autoScrollTimerAdjust,autoScroll;
+
+		content.mCustomScrollbar({
+			scrollButtons:{enable:true},
+			callbacks:{
+				whileScrolling:function(){
+					autoScrollTimerAdjust=autoScrollTimer*this.mcs.topPct/100;
+				},
+				onScroll:function(){
+					if($(this).data("mCS").trigger==="internal"){AutoScrollOff();}
+				}
+			}
+		});
+
+		content.addClass("auto-scrolling-on auto-scrolling-to-bottom");
+		AutoScrollOn("bottom");
+
+		function clickStop(e){
+			e.preventDefault();
+			if(content.hasClass("auto-scrolling-on")){
+				AutoScrollOff();
+			}else{
+				if(content.hasClass("auto-scrolling-to-top")){
+					AutoScrollOn("top",autoScrollTimerAdjust);
+				}else{
+					AutoScrollOn("bottom",autoScrollTimer-autoScrollTimerAdjust);
+				}
+			}
+		}
+
+		function AutoScrollOn(to,timer){
+			if(!timer){timer=autoScrollTimer;}
+			content.addClass("auto-scrolling-on").mCustomScrollbar("scrollTo",to,{scrollInertia:timer,scrollEasing:"easeInOutSmooth"});
+			autoScroll=setTimeout(function(){
+				if(content.hasClass("auto-scrolling-to-top")){
+					AutoScrollOn("bottom",autoScrollTimer-autoScrollTimerAdjust);
+					content.removeClass("auto-scrolling-to-top").addClass("auto-scrolling-to-bottom");
+				}else{
+					AutoScrollOn("top",autoScrollTimerAdjust);
+					content.removeClass("auto-scrolling-to-bottom").addClass("auto-scrolling-to-top");
+				}
+			},timer);
+		}
+
+		function AutoScrollOff(){
+			clearTimeout(autoScroll);
+			content.removeClass("auto-scrolling-on").mCustomScrollbar("stop");
+		}
+
+	});
+})(jQuery);
+						</textarea>
+					</form>
+		    	</div>
+		    </section>
+
 		    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 snap-scrolling-example">
 		    	<!-- content -->
 				<div id="content-snap" class="content horizontal-images">
@@ -81,48 +148,91 @@
 				</div>
 		    </section>
 
+		    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		    	<h3 class="page-header">代码如下：</h3>
+		    	<div class="demo-item">
+		    		<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy('scrollcode')"><span class="copy"></span></a>
+		    		<form>
+			    		<textarea id="scrollcode" name="scrollcode" style="display: none;">
+(function($){
+	$(window).on("load",function(){
+		
+		/* 
+		get snap amount programmatically or just set it directly (e.g. "273") 
+		in this example, the snap amount is list item's (li) outer-width (width+margins)
+		*/
+		var amount=Math.max.apply(Math,$("#content-snap li").map(function(){return $(this).outerWidth(true);}).get());
+		
+		$("#content-snap").mCustomScrollbar({
+			axis:"x",
+			theme:"inset",
+			advanced:{
+				autoExpandHorizontalScroll:true
+			},
+			scrollButtons:{
+				enable:true,
+				scrollType:"stepped"
+			},
+			keyboard:{scrollType:"stepped"},
+			snapAmount:amount,
+			mouseWheel:{scrollAmount:amount}
+		});
+		
+	});
+})(jQuery);
+						</textarea>
+					</form>
+		    	</div>
+		    </section>
+
 		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 showcase scrollTo-demo">
 				<section id="info">
-					<div class="scrollTo">
-						<ul>
-							<li><span>Content y &rarr;</span></li>
-							<li><a href="#" rel="content-y" data-scroll-to="p:eq(2)">Scroll to 3rd paragraph</a></li>
-							<li><a href="#bottom" rel="content-y">Scroll to bottom</a></li>
-							<li><a href="#" rel="content-y" data-scroll-to="p:eq(0)">Scroll to 1st paragraph</a></li>
-							<li><a href="#850" rel="content-y">Scroll to 850 pixels</a></li>
-							<li><a href="#-=100" rel="content-y">Scroll by 100 pixels more</a></li>
-							<li><a href="#+=100" rel="content-y">Scroll by 100 pixels less</a></li>
-							<li><a href="#50%" rel="content-y">Scroll to 50%</a></li>
-						</ul>
-					</div>
-					<div class="scrollTo">
-						<ul>
-							<li><span>Content x &rarr;</span></li>
-							<li><a href="#10%" rel="content-x">Scroll to 10%</a></li>
-							<li><a href="##test-id" rel="content-x">Scroll to (id) red paragraph</a></li>
-							<li><a href="#" rel="content-x" data-scroll-to="#test-id+p">Scroll to the paragraph next to the red one</a></li>
-							<li><a href="#-=350" rel="content-x">Scroll by 350 pixels more (paragraph's outer width)</a></li>
-							<li><a href="#first" rel="content-x">Scroll to 1st element</a></li>
-						</ul>
-					</div>
-					<div class="scrollTo">
-						<ul>
-							<li><span>Content yx &rarr;</span></li>
-							<li><a href="#" rel="content-yx" data-scroll-to="p:eq(4)">Scroll to 5th paragraph</a></li>
-							<li><a href="#['bottom','right']" rel="content-yx">Scroll to bottom/right</a></li>
-							<li><a href="#'last'" rel="content-yx">Scroll to last element</a></li>
-							<li><a href='#{y:"450",x:"250"}' rel="content-yx">Scroll to y:450, x:250 pixels</a></li>
-							<li><a href="#['-=100','-=50']" rel="content-yx">Scroll by y:100 and x:50 pixels more</a></li>
-							<li><a href="#['top',null]" rel="content-yx">Scroll to top</a></li>
-						</ul>
-					</div>
-					<p>Function called: <code>&nbsp;</code></p>
+					<p>代码如下:
+						<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy('scrollcode')"><span class="copy"></span></a> 
+						<code>
+							&nbsp;
+						</code>
+					</p>
 				</section>
 				<section id="examples">
-					
+				
+					<div class="col-lg-4 btn-y scrollTo">
+						<ul>
+							<li><span>垂直方向（Content y） &rarr;</span></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#" rel="content-y" data-scroll-to="p:eq(2)">滚动到第三段</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#bottom" rel="content-y">滚动到底部</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#" rel="content-y" data-scroll-to="p:eq(0)">滚动到第一段</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#850" rel="content-y">滚到 850 pixels 处</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#-=100" rel="content-y">沿滚动方向逐渐滚动 100 pixels</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#+=100" rel="content-y">滚动反方向逐渐滚动 100 pixels</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#50%" rel="content-y">滚动到 50%</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4 btn-x scrollTo">
+						<ul>
+							<li><span>水平方向（Content x） &rarr;</span></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#10%" rel="content-x">滚动到 10%</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="##test-id" rel="content-x">滚动到红色段落</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#" rel="content-x" data-scroll-to="#test-id+p">滚动到红色下一段</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#-=350" rel="content-x">沿滚动方向逐渐滚动 350 pixels</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#first" rel="content-x">滚动到第一个元素</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4 btn-yx scrollTo">
+						<ul>
+							<li><span>水平垂直双向（Content yx） &rarr;</span></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#" rel="content-yx" data-scroll-to="p:eq(4)">滚动到第五段</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#['bottom','right']" rel="content-yx">滚动到右下角（bottom/right）</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#'last'" rel="content-yx">滚动到最后一个元素</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href='#{y:"450",x:"250"}' rel="content-yx">滚动到坐标 y:450, x:250 pixels</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#['-=100','-=50']" rel="content-yx">沿着滚动方向，垂直滚动 100 px 水平滚动 50 px</a></li>
+							<li><a class="btn btn-link btn-l" role="button" href="#['top',null]" rel="content-yx">滚动到顶部</a></li>
+						</ul>
+					</div>
+
 					<!-- content -->
 					<div class="content demo-y">
-						<h2>Content y</h2>
+						<h2>垂直方向（Content y）</h2>
 						<hr />
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
 						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -144,7 +254,7 @@
 					
 					<!-- content -->
 					<div class="content demo-x">
-						<h2>Content x</h2>
+						<h2>水平方向（Content x）</h2>
 						<hr />
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
 						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -158,7 +268,7 @@
 					
 					<!-- content -->
 					<div class="content demo-yx">
-						<h2>Content yx</h2>
+						<h2>水平垂直双向（Content yx）</h2>
 						<hr />
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
 						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

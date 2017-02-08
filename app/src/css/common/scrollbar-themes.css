@@ -13,6 +13,9 @@
     border-radius: 5px;
     position: relative;
 }
+.theme-code .demo-item{
+    height: auto;
+}
 .demo-item.light{
     background-color: #ddd;
     color: #333;

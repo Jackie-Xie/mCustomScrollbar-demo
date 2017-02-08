@@ -9,10 +9,13 @@
  */
 angular.module('myappApp')
   	.controller('FuncExController', ['$scope','$timeout',function ($scope, $timeout) {
-	   
+	   	var jsAddEditor = null,jsDisplayEditor = null,jsCallEditor = null;
+
 	    $scope.init = function () {
 	    	$scope.isStopOrStart = 'glyphicon glyphicon-pause';
 	    	
+	    	$scope.jsEditFormat();
+
 	    	$timeout($scope.bindEvent,500);
 	    };
 
@@ -24,6 +27,8 @@ angular.module('myappApp')
 	    	// 全屏幕的滚动条
 			$('.demo-content').mCustomScrollbar({theme:'3d-thick'});
 
+			$scope.codeSectionScrollBarFormat();
+
 			// 回调实例
 			$scope.watchCallback();
 			$scope.clickChange();	
@@ -32,48 +37,100 @@ angular.module('myappApp')
 			$scope.infinite();	
 				
 			$("#hidden-demo").mCustomScrollbar();
-				
-				$(".show-hide a").click(function(e){
-					e.preventDefault();
-					var $this=$(this),
-						rel=$this.attr("rel"),
-						el=$("#hidden-demo"),
-						wrapper=$("#init-hidden-demo"),
-						dur=700;
-					switch(rel){
-						case "toggle-display":
-							if(!el.is(":visible")){
-								el.removeClass("hidden").css("display","block");
-							}else{
-								el.addClass("hidden").css("display","none");
-							}
-							break;
-						case "toggle-height":
-							if(el.is(":visible")){el.toggleClass("zero-height");}
-							break;
-						case "toggle-width":
-							if(el.is(":visible")){el.toggleClass("zero-width");}
-							break;
-						case "toggle":
-							if(!el.is(":animated")){
-								wrapper.removeClass("transitions");
-								el.toggle(dur,function(){wrapper.addClass("transitions");});
-							}
-							break;
-						case "toggle-fade":
-							if(!el.is(":animated")){
-								wrapper.removeClass("transitions");
-								el.fadeToggle(dur,function(){wrapper.addClass("transitions");});
-							}
-							break;
-						case "toggle-slide":
-							if(!el.is(":animated")){
-								wrapper.removeClass("transitions");
-								el.slideToggle(dur,function(){wrapper.addClass("transitions");});
-							}
-							break;
-					}
-				});		
+
+			//点击显示隐藏效果	
+			$scope.display();
+	    };
+
+	    /*
+    	 * 代码区域滚动条格式化
+	     */
+	    $scope.codeSectionScrollBarFormat = function () {
+	    	$.mCustomScrollbar.defaults.scrollButtons.enable = true;
+            $.mCustomScrollbar.defaults.axis = "yx"; 
+            $(".CodeMirror").mCustomScrollbar({    				  
+				scrollInertia: 550,
+				autoDraggerLength: true,              
+				autoHideScrollbar: true,
+				theme:'light-3',           
+            });
+	    };
+
+	    /*
+	     * 格式化js代码编辑器
+	     */
+	    $scope.jsEditFormat = function () {
+	          jsAddEditor = CodeMirror.fromTextArea(document.getElementById("addcode"), {
+	            lineNumbers: true,
+	            styleActiveLine: true,
+	            matchBrackets: true,
+	            mode: "javascript",
+	            theme: "monokai"
+	          });
+
+	          jsDisplayEditor = CodeMirror.fromTextArea(document.getElementById("displaycode"), {
+	            lineNumbers: true,
+	            styleActiveLine: true,
+	            matchBrackets: true,
+	            mode: "javascript",
+	            theme: "monokai"
+	          });
+
+	          jsCallEditor = CodeMirror.fromTextArea(document.getElementById("callcode"), {
+	            lineNumbers: true,
+	            styleActiveLine: true,
+	            matchBrackets: true,
+	            mode: "javascript",
+	            theme: "monokai"
+	          });
+
+	    };
+
+	    /*
+	     * 点击效果
+	     */
+	    $scope.display = function () {
+	    	$(".show-hide a").click(function(e){
+				e.preventDefault();
+				var $this=$(this),
+					rel=$this.attr("rel"),
+					el=$("#hidden-demo"),
+					wrapper=$("#init-hidden-demo"),
+					dur=700;
+				switch(rel){
+					case "toggle-display":
+						if(!el.is(":visible")){
+							el.removeClass("hidden").css("display","block");
+						}else{
+							el.addClass("hidden").css("display","none");
+						}
+						break;
+					case "toggle-height":
+						if(el.is(":visible")){el.toggleClass("zero-height");}
+						break;
+					case "toggle-width":
+						if(el.is(":visible")){el.toggleClass("zero-width");}
+						break;
+					case "toggle":
+						if(!el.is(":animated")){
+							wrapper.removeClass("transitions");
+							el.toggle(dur,function(){wrapper.addClass("transitions");});
+						}
+						break;
+					case "toggle-fade":
+						if(!el.is(":animated")){
+							wrapper.removeClass("transitions");
+							el.fadeToggle(dur,function(){wrapper.addClass("transitions");});
+						}
+						break;
+					case "toggle-slide":
+						if(!el.is(":animated")){
+							wrapper.removeClass("transitions");
+							el.slideToggle(dur,function(){wrapper.addClass("transitions");});
+						}
+						break;
+				}
+			});		
 	    };
 
 	    /*

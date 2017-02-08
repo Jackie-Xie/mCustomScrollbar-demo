@@ -41,3 +41,9 @@
 .CodeMirror-scroll {
 	min-height: 330px;
 }
+.code-copy + .CodeMirror {
+    height: 200px;
+}
+.theme-code .CodeMirror-scroll {
+    min-height: 170px;
+}

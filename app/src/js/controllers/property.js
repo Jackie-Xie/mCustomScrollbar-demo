@@ -52,7 +52,27 @@ angular.module('myappApp')
 	    	$scope.cssCodeRun();
 	    	$scope.jsCodeRun();
 	    };
-	    
+
+	    /*
+	     * 复制代码
+	     */
+	    $scope.copy = function (str) {
+	    	var code = '';
+	    	switch(str){
+	    		case 'js':
+	    			code = jsEditor.getValue();
+	    			break;
+    			case 'html':
+	    			code = htmlEditor.getValue();
+	    			break;
+    			case 'css':
+	    			code = cssEditor.getValue();
+	    			break;
+	    	} 
+
+	    	setClipboard(code); 
+	    };
+
 	    /*
 	     * 各种redo和undo
 	     */

@@ -7,7 +7,7 @@
 <div class="container-fluid" ng-init="init()">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 demo-content">
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<section id="info">
 					<div class="callbacks">
 						<ul>
@@ -23,7 +23,7 @@
 						<span>Content position (<code>this.mcs.top</code>): <span id="mcs-top"></span></span>
 						<span>Dragger position (<code>this.mcs.draggerTop</code>): <span id="mcs-dragger-top"></span></span>
 						<span>Scroll percentage (<code>this.mcs.topPct</code>): <span id="mcs-top-pct"></span></span>
-						<span>Scroll direction (<code>this.mcs.direction</code>): <span id="mcs-direction"></span></span><br />
+						<span>Scroll direction (<code>this.mcs.direction</code>): <span id="mcs-direction"></span></span>
 						<span>Total scroll offset (bottom yellow dash): <span id="mcs-total-scroll-offset"></span></span>
 						<span>Total scroll back offset (top yellow dash): <span id="mcs-total-scroll-back-offset"></span></span>
 					</p>
@@ -59,6 +59,65 @@
 					
 				</section>
 			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h3 class="page-header">代码如下：</h3>
+		    	<div class="demo-item h510">
+		    		<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy('callback')"><span class="copy"></span></a>
+		    		<form>
+			    		<textarea id="callcode" name="callcode" style="display: none;">
+(function($){
+	$(window).on("load",function(){
+		
+		$(".content").mCustomScrollbar();
+		
+		$(".show-hide a").click(function(e){
+			e.preventDefault();
+			var $this=$(this),
+				rel=$this.attr("rel"),
+				el=$(".content"),
+				wrapper=$("#demo"),
+				dur=700;
+			switch(rel){
+				case "toggle-display":
+					if(!el.is(":visible")){
+						el.css("display","block");
+					}else{
+						el.css("display","none");
+					}
+					break;
+				case "toggle-height":
+					if(el.is(":visible")){el.toggleClass("zero-height");}
+					break;
+				case "toggle-width":
+					if(el.is(":visible")){el.toggleClass("zero-width");}
+					break;
+				case "toggle":
+					if(!el.is(":animated")){
+						wrapper.removeClass("transitions");
+						el.toggle(dur,function(){wrapper.addClass("transitions");});
+					}
+					break;
+				case "toggle-fade":
+					if(!el.is(":animated")){
+						wrapper.removeClass("transitions");
+						el.fadeToggle(dur,function(){wrapper.addClass("transitions");});
+					}
+					break;
+				case "toggle-slide":
+					if(!el.is(":animated")){
+						wrapper.removeClass("transitions");
+						el.slideToggle(dur,function(){wrapper.addClass("transitions");});
+					}
+					break;
+			}
+		});
+		
+	});
+})(jQuery);
+						</textarea>
+					</form>
+		    	</div>
+			</div>
 
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				<section id="ex">
@@ -86,18 +145,56 @@
 					
 				</section>
 			</div>
-
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+				<h3 class="page-header">代码如下：</h3>
+		    	<div class="demo-item">
+		    		<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy('add')"><span class="copy"></span></a>
+		    		<form>
+			    		<textarea id="addcode" name="addcode" style="display: none;">
+(function($){
+	$(window).on("load",function(){
+		
+		$(".content").mCustomScrollbar({
+			theme:"light-2",
+			scrollButtons:{
+				enable:true
+			},
+			callbacks:{
+				onTotalScroll:function(){ addContent(this) },
+				onTotalScrollOffset:100,
+				alwaysTriggerOffsets:false
+			}
+		});
+		
+		function addContent(el){
+			var c="<h2>Appended content</h2>";
+			for(var i=0; i<3; i++){
+				c+="<p>"+el.mcs.content.find("p:eq("+i+")").html()+"</p>";
+			}
+			c+="<p>End of appended content.</p>";
+			el.mcs.content.append(c);
+			$(".offset").appendTo(el.mcs.content);
+		}
+		
+	});
+})(jQuery);
+						</textarea>
+					</form>
+		    	</div>
+			</div>
+			
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<div id="init-hidden-demo" class="transitions init-hidden">
 					<section class="operate">
 						<div class="show-hide">
 							<ul>
-								<li><a href="#" rel="toggle-display">Toggle display (CSS)</a></li>
-								<li><a href="#" rel="toggle-height">Toggle height(CSS transition)</a></li>
-								<li><a href="#" rel="toggle-width">Toggle width (CSS transition)</a></li>
-								<li><a href="#" rel="toggle">Show/hide (jQuery)</a></li>
-								<li><a href="#" rel="toggle-fade">Fade in/out (jQuery)</a></li>
-								<li><a href="#" rel="toggle-slide">Slide up/down (jQuery)</a></li>
+								<li><h3>操作按钮：</h3></li>
+								<li><a role="button" class="btn btn-link btn-l" href="#" rel="toggle-display">显示/隐藏（CSS实现）</a></li>
+								<li><a role="button" class="btn btn-link btn-l" href="#" rel="toggle-height">高度切换(CSS3过渡 transition)</a></li>
+								<li><a role="button" class="btn btn-link btn-l" href="#" rel="toggle-width">宽度切换(CSS3过渡 transition)</a></li>
+								<li><a role="button" class="btn btn-link btn-l" href="#" rel="toggle">显示/隐藏 (jQuery)</a></li>
+								<li><a role="button" class="btn btn-link btn-l" href="#" rel="toggle-fade">淡入/淡出 (jQuery)</a></li>
+								<li><a role="button" class="btn btn-link btn-l" href="#" rel="toggle-slide">滑入/滑出 (jQuery)</a></li>
 							</ul>
 						</div>
 					</section>
@@ -126,6 +223,65 @@
 						
 					</section>
 				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h3 class="page-header">代码如下：</h3>
+		    	<div class="demo-item h445">
+		    		<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy('display')"><span class="copy"></span></a>
+		    		<form>
+			    		<textarea id="displaycode" name="displaycode" style="display: none;">
+(function($){
+	$(window).on("load",function(){
+		
+		$(".content").mCustomScrollbar();
+		
+		$(".show-hide a").click(function(e){
+			e.preventDefault();
+			var $this=$(this),
+				rel=$this.attr("rel"),
+				el=$(".content"),
+				wrapper=$("#demo"),
+				dur=700;
+			switch(rel){
+				case "toggle-display":
+					if(!el.is(":visible")){
+						el.css("display","block");
+					}else{
+						el.css("display","none");
+					}
+					break;
+				case "toggle-height":
+					if(el.is(":visible")){el.toggleClass("zero-height");}
+					break;
+				case "toggle-width":
+					if(el.is(":visible")){el.toggleClass("zero-width");}
+					break;
+				case "toggle":
+					if(!el.is(":animated")){
+						wrapper.removeClass("transitions");
+						el.toggle(dur,function(){wrapper.addClass("transitions");});
+					}
+					break;
+				case "toggle-fade":
+					if(!el.is(":animated")){
+						wrapper.removeClass("transitions");
+						el.fadeToggle(dur,function(){wrapper.addClass("transitions");});
+					}
+					break;
+				case "toggle-slide":
+					if(!el.is(":animated")){
+						wrapper.removeClass("transitions");
+						el.slideToggle(dur,function(){wrapper.addClass("transitions");});
+					}
+					break;
+			}
+		});
+		
+	});
+})(jQuery);
+						</textarea>
+					</form>
+		    	</div>
 			</div>
 	    </div>
 	</div>
