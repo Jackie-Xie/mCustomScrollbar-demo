@@ -80,6 +80,9 @@ code{
     padding: 0 20px;
     background: transparent;
 }
+.callbacks ul li a{
+    padding: 3px 12px;
+}
 .scrollTo-demo .demo-y {
     width: 20%;
     height: 290px;
@@ -195,7 +198,7 @@ code{
     overflow: hidden;
 }
 .callbacks + p span {
-    padding: 8px 15px;
+    padding: 8px 10px;
 }
 .h445{
     height: 445px;

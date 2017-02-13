@@ -2,8 +2,26 @@
 <div class="container-fluid" ng-init="init()">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 demo-content">
+			<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h3>代码：（请选择一项，此处生成代码）</h3>
+				<div class="demo-item">
+					<a role="button" title="复制" class="btn btn-default btn-float" ng-click="copy()"><span class="copy"></span></a>
+					<form>
+				    	<textarea class="code-comb" name="code" style="display: none;">
+						</textarea>
+					</form>
+				</div>
+			</section>
+
 			<section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<h3>组合jquery_ui_accordion</h3>
+				<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="1" ng-model="num" ng-checked="num == '1'" ng-click="generateCode()">
+					    	组合jquery_ui_accordion
+					  	</label>
+					</div>
+				</h3>
 		        <!-- accordion -->
 		        <div id="content-accordion" class="demo-item">
 		            <h3>春江花月夜<span class="sub-title">张若虚</span>
@@ -93,7 +111,14 @@
 		    </section>
 
 		    <section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		    	<h3>组合jquery_ui_autocomplete</h3>
+		    	<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="2" ng-model="num" ng-checked="num == '2'" ng-click="generateCode()">
+					    	组合jquery_ui_autocomplete
+					  	</label>
+					</div>
+				</h3>
 		        <!-- autocomplete -->
 		        <div class="demo-item text-center">
 		        	<label for="autocomplete">Type a country: </label>
@@ -102,7 +127,14 @@
 		    </section>
 
 		    <section class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
-		    	<h3>jquery_ui_dialog&nbsp;和&nbsp;jquery_ui_resizable</h3>
+		    	<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="3" ng-model="num" ng-checked="num == '3'" ng-click="generateCode()">
+					    	jquery_ui_dialog&nbsp;和&nbsp;jquery_ui_resizable
+					  	</label>
+					</div>
+				</h3>
 		    	<div class="content demo-item mCustomScrollbar">
 			    	<!-- dialog -->
 			    	<div class="dialog">
@@ -144,7 +176,15 @@
 		    </section>
 
 		    <section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		    	<h3>组合jquery_ui_sortable</h3>
+				<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="4" ng-model="num" ng-checked="num == '4'" ng-click="generateCode()">
+					    	组合jquery_ui_sortable
+					  	</label>
+					</div>
+				</h3>
+
 		    	<!-- sortable -->
 				<div id="sortable" class="content demo-item">
 					<h2>Sortable content</h2>
@@ -177,7 +217,14 @@
 		    </section>
 
 		    <section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		    	<h3>组合jquery_ui_sortable</h3>
+		    	<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="5" ng-model="num" ng-checked="num == '5'" ng-click="generateCode()">
+					    	组合jquery_ui_tabs
+					  	</label>
+					</div>
+				</h3>
 		    	<div class="content demo-item mCustomScrollbar">
 			    	<h2>Scrollbar for each tab panel</h2>
 					<!-- tabs -->
@@ -258,7 +305,14 @@
 		    </section>
 
 		    <section class="col-lg-3 col-md-3 col-sm-6 col-xs-12 textarea-example">
-				<h3>与textarea组合</h3>
+				<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="6" ng-model="num" ng-checked="num == '6'" ng-click="generateCode()">
+					    	与textarea组合
+					  	</label>
+					</div>
+				</h3>
 				<!-- content -->
 				<div id="textarea" class="content demo-item">
 					<h2>textarea example</h2>
@@ -276,7 +330,14 @@
 			</section>
 
 			<section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<h3>与Bootstrap组合1</h3>
+				<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="7" ng-model="num" ng-checked="num == '7'" ng-click="generateCode()">
+					    	与Bootstrap组合1
+					  	</label>
+					</div>
+				</h3>
 				<div class="demo-item">
 					<!-- dropdown -->
 					<div class="dropdown">
@@ -403,7 +464,14 @@
 			</section>
 				
 			<section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<h3>与Bootstrap组合2</h3>
+				<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="8" ng-model="num" ng-checked="num == '8'" ng-click="generateCode()">
+					    	与Bootstrap组合2
+					  	</label>
+					</div>
+				</h3>
 				<div class="content demo-item">
 					<!-- Collapse -->
 					<div class="panel-group" id="accordion">
@@ -463,7 +531,14 @@
 			</section>
 
 			<section class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<h3>与Bootstrap组合3</h3>
+				<h3>
+					<div class="radio">
+					  	<label>
+					    	<input type="radio" name="optionsRadios" value="9" ng-model="num" ng-checked="num == '9'" ng-click="generateCode()">
+					    	与Bootstrap组合3
+					  	</label>
+					</div>
+				</h3>
 				<div class="content demo-item">
 					<!-- Tabs -->
 					<div id="myTab">

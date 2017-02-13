@@ -56,21 +56,15 @@ angular.module('myappApp')
 	    /*
 	     * 复制代码
 	     */
-	    $scope.copy = function (str) {
-	    	var code = '';
-	    	switch(str){
-	    		case 'js':
-	    			code = jsEditor.getValue();
-	    			break;
-    			case 'html':
-	    			code = htmlEditor.getValue();
-	    			break;
-    			case 'css':
-	    			code = cssEditor.getValue();
-	    			break;
-	    	} 
-
-	    	setClipboard(code); 
+	    $scope.copy = function (str) {    
+        	var str = str + 'code',
+        	    contat = document.getElementById(str).value;
+			if(!window.clipboardData){
+				alert("复制失败，请手动Ctrl+C快捷键复制！");
+			}else{
+				window.clipboardData.setData('text', contat);
+				alert("内容已经复制到剪贴板！");
+			}
 	    };
 
 	    /*
